@@ -1,0 +1,47 @@
+# Initial Setup
+# touch "$HOME/.cache/zshhistory
+# Setup Alias in $HOME/zsh/aliasrc
+
+# Enable colors and change prompt:
+#autoload -U colors && colors
+#PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+
+# git(main)
+autoload -Uz vcs_info # enable vcs_info
+precmd_vcs_info() { vcs_info } # always load before displaying the prompt
+precmd_functions+=( precmd_vcs_info )
+setopt prompt_subst
+RPROMPT=\$vcs_info_msg_0_
+zstyle ':vcs_info:*' formats '%F{yellow}(%b)%r%f ' # git(main)
+
+# Prompt
+PS1='%F{green}%1~%f %F{yellow}𐦞 %f'
+
+# Custom Variables
+EDITOR=vim
+TERMINAL=kitty
+BROWSER=brave
+
+# History in cache directory:
+HISTSIZE=10000
+SAVEHIST=10000
+HISTFILE=~/.cache/zshhistory
+setopt appendhistory
+
+# Basic auto/tab complete:
+autoload -U compinit
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+compinit
+_comp_options+=(globdots)               # Include hidden files.
+
+# Custom ZSH Binds
+bindkey '^ ' autosuggest-accept
+
+# Load aliases and shortcuts if existent.
+[ -f "$HOME/.config/zsh/aliasrc" ] && source "$HOME/.config/zsh/aliasrc"
+
+# Load ; should be last.
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+source /usr/share/autojump/autojump.zsh 2>/dev/null
