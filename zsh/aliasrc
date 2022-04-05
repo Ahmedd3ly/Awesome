@@ -29,9 +29,10 @@ export EDITOR=vim
 #alias pacman-update='sudo pacman-mirrors --geoip'
 alias pac='sudo pacman'
 alias pac-update='sudo pacman -Syyu'
+alias pac-clean='sudo pacman -Rns $(pacman -Qtdq)'
 alias yay='paru'
 alias yeet='sudo pacman -Rns'
-
+alias clean='sudo pacman -Sc'
 
 alias ls='ls'
 alias ll='ls -l'
