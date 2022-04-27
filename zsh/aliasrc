@@ -33,6 +33,7 @@ alias pac-clean='sudo pacman -Rns $(pacman -Qtdq)'
 alias yay='paru'
 alias yeet='sudo pacman -Rns'
 alias clean='sudo pacman -Sc'
+alias findr='sudo find / -type f -iname'
 
 alias ls='ls'
 alias ll='ls -l'
