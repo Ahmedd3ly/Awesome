@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-NOTIFY_ICON=/usr/share/icons/Papirus/32x32/apps/system-software-update.svg 
+NOTIFY_ICON=/usr/share/icons/Papirus/32x32/apps/system-software-update.svg
 
 get_total_updates() { UPDATES=$(checkupdates 2>/dev/null | wc -l); }
 
@@ -39,7 +39,7 @@ while true; do
     # and network uptime, only checking once every 30 min for new updates
     while (( UPDATES == 0 )); do
         echo " None"
-        sleep 1000
+        sleep 1800
         get_total_updates
     done
 done

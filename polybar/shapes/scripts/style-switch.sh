@@ -5,7 +5,7 @@ FILE="$HOME/.config/polybar/shapes/glyphs.ini"
 # Replace Glyphs
 change_style() {
 	sed -i -e "s/gleft = .*/gleft = $1/g" $FILE
-	sed -i -e "s/gright = .*/gright = $1/g" $FILE
+	sed -i -e "s/gright = .*/gright = $2/g" $FILE
 
 	polybar-msg cmd restart
 }
