@@ -447,7 +447,7 @@ beautiful.notification_icon_size = 80
 -- Autostart
 awful.spawn.with_shell("picom --experimental-backend")
 awful.spawn.with_shell("~/.config/polybar/launch.sh --shapes")
-awful.spawn.with_shell("dwall -s street")
 awful.spawn.with_shell("xbindkeys")
 awful.spawn.with_shell("$HOME/.config/gtk-3.0/settings.ini")
---awful.spawn.with_shell("feh --bg-fill ~/.wallpapers/sunset.jpg")
+awful.spawn.with_shell("feh --bg-fill ~/.wallpapers/wp.jpg")
+--awful.spawn.with_shell("dwall -s street")
