@@ -107,9 +107,6 @@ mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesom
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
 -- }}}
 
--- Keyboard map indicator and switcher
-mykeyboardlayout = awful.widget.keyboardlayout()
-
 local function set_wallpaper(s)
     -- Wallpaper
     if beautiful.wallpaper then
@@ -448,6 +445,5 @@ beautiful.notification_icon_size = 80
 awful.spawn.with_shell("picom --experimental-backend")
 awful.spawn.with_shell("~/.config/polybar/launch.sh --shapes")
 awful.spawn.with_shell("xbindkeys")
-awful.spawn.with_shell("$HOME/.config/gtk-3.0/settings.ini")
 awful.spawn.with_shell("feh --bg-fill ~/.wallpapers/wp.jpg")
 --awful.spawn.with_shell("dwall -s street")
