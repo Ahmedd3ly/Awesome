@@ -34,9 +34,8 @@ alias yay='paru'
 alias yeet='sudo pacman -Rns'
 alias clean='sudo pacman -Rns $(pacman -Qtdq)'
 alias findr='sudo find / -type f -iname'
+alias ltsa='java -jar ~/Documents/CS-210-Concurrency/ltsatool/ltsa.jar'
 
-alias ls='ls'
-alias ll='ls -l'
 # ls, the common ones I use a lot shortened for rapid fire usage
 alias l='ls -lFh'     #size,show type,human readable
 alias la='ls -lAFh'   #long list,show almost all,show type,human readable
